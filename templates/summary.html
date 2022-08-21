@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My summary
+{% endblock %}
+
+{% block main %}
+
+{% if rateinfo["rate"] %}
+<h1>Goal rate</h1>
+<p>In order to reach your goal of earning <b>{{ rateinfo["net_month"] }}</b> per month,
+    you should charge at least <b>{{ rateinfo["rate"] }}€</b> per hour.</p>
+<br>
+{% else %}
+<h1>Goal rate</h1>
+<p>It looks like you haven't set a goal rate yet. This information is really useful
+    for reaching your goals as a freelancer. Please go to our <a href="/rate">rate per hour calculator</a>
+    to start -you'll only have to answer a few quick questions.
+</p>
+<br>
+{% endif %}
+
+{% if clientsinfo %}
+<h1>Client summary</h1>
+<br>
+<p>{{ message }}</p>
+<br>
+
+<table class="table table-stripped">
+    <thead class="table table-dark">
+        <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Hours worked</th>
+            <th class="text-center">EUR billed</th>
+            <th class="text-center">Rate/hour</th>
+            <th class="text-center">Delete client</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for client in clientsinfo %}
+        <tr>
+            <td class="text-center">{{ client["client_name"] }}</td>
+            <td class="text-center">{{ client["hours_worked"] }}</td>
+            <td class="text-center">{{ client["amount_billed"] }} €</td>
+            <td class="text-center">{{ client["rate"] }} €</td>
+            <td class="text-center"><form action="{{ url_for('delete', id=client.id) }}" method="post"><button class="btn btn-danger" type="submit" name="client" value="Delete">Delete</button></form></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+<br>
+<h5 class="totals"><b>Total hours worked: {{ totals["hours"] }}</b></h5>
+<h5 class="totals"><b>Total amount billed: {{ totals["amount"] }}</b></h5>
+<h5 class="totals"><b></b>Average rate/hour: {{ totals["average"] }}</b></h5>
+
+{% else %}
+<h1>Client summary</h1>
+<p>You haven't added any information about your clients yet. You can do it
+    <a href="/clients">using this tool</a> to see some really useful stats about
+    your freelancer journey.</p>
+{% endif %}
+
+{% endblock %}

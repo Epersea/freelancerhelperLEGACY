@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rate calculator 3: earnings
+{% endblock %}
+
+{% block main %}
+<h1>How much do you want to earn?</h1>
+<br>
+<p>Almost done! Just a couple more questions before getting your results…</p>
+<br>
+<form action="/rate3" method="post">
+    <div class="mb-3">
+        <h5>How much do you want to earn per month net?
+        </h5>
+        <input autocomplete="off" autofocus class="form-control w-auto" name="netmonth" placeholder="EUR" type="number" min="0">
+    </div>
+    <div class="mb-3">
+        <h5>What percentage of your earnings will be dedicated to taxes?
+            This can vary a lot between countries and income brackets, so please do your research!
+            (Please don't write the % sign.)
+        </h5>
+        <input autocomplete="off" autofocus class="form-control w-auto" name="taxpercent" placeholder="%" type="number" min="0">
+    </div>
+    <button class="btn btn-primary btn-lg" type="submit">Show me my results</button>
+</form>
+{% endblock %}

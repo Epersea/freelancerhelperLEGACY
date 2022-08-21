@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rate calculator 4: results
+{% endblock %}
+
+{% block main %}
+
+<h1>You should charge (at least) €{{ rateinfo["rate"] }} per hour.</h1>
+<br>
+<h2>Where does this number come from?</h2>
+<p>You said you wanted to work {{ rateinfo["hours_day"] }} hours per day. Of those, {{ rateinfo["billable_percent"] }}% will be billable.
+    Taking weekends, vacation, training and sick time into account, this amounts to {{ rateinfo["billable_hours_year"] }} billable hours per year.</p>
+<p>Your goal is to earn €{{ rateinfo["net_month"] }} net per month or €{{ rateinfo["net_month"] * 12 }} per year. Since your tax rate is {{ rateinfo["tax_percent"] }}%
+    and your estimated annual expenses are €{{ rateinfo["annual_expenses"] }}, this adds up to €{{ rateinfo["gross_year"] }} gross per year.</p>
+    <p>€{{ rateinfo["gross_year"] }} income / {{ rateinfo["billable_hours_year"] }} hours = €{{ rateinfo["rate"] }} per hour. Easy peasy!
+    </p>
+<p>If you want to change your numbers, you can go back to <a href="/rate"> the rate calculator</a> and start again.</p>
+{% endblock %}

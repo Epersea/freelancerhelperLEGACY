@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rate calculator 2: hours
+{% endblock %}
+
+{% block main %}
+<h1>How much do you want to work?</h1>
+<br>
+<p>In this page, you will need to decide how much do you want to work per day and per week.
+    We encourage you to be realistic and mindful of your health and work-life balance.
+    We do not recommend working more than 8 hours per day or 5 days per week long-term.</p>
+<p>Remember, if something doesn't apply to your case, just write “0”.</p>
+<p>When you are finished, just click on “Next”.</p>
+<br>
+
+<form action="/rate2" method="post">
+    <div class="mb-3">
+        <h5>So… how many hours do you want to work per day?</h5>
+        <input autocomplete="off" autofocus class="form-control w-auto" name="hoursperday" placeholder="Hours" type="number" min="0">
+    </div>
+    <div class="mb-3">
+        <h5>What percentage of this time will be spent in non-billable tasks? For instance, replying to emails, accounting, looking for new clients…
+            If you are not sure, we think 20% is a reasonable estimation in most cases. (Please don't write the % sign).</h5>
+        <input autocomplete="off" autofocus class="form-control w-auto" name="percentnonbillable" placeholder="%" type="number" min="0">
+    </div>
+    <div class="mb-3">
+        <h5>How many days do you want to work per week?</h5>
+        <input autocomplete="off" autofocus class="form-control w-auto" name="daysperweek" placeholder="Days" type="number" min="0" max="7">
+    </div>
+    <div class="mb-3">
+        <h5>How many holidays are you taking a year?</h5>
+        <input autocomplete="off" autofocus class="form-control w-auto" name="holidays" placeholder="Days" type="number" min="0" max="365">
+    </div>
+    <div class="mb-3">
+        <h5>How many days per year will you spend in training and conferences?</h5>
+        <input autocomplete="off" autofocus class="form-control w-auto" name="trainingdays" placeholder="Days" type="number" min="0" max="365">
+    </div>
+    <div class="mb-3">
+        <h5> How many sick days are you allowing per year?</h5>
+        <input autocomplete="off" autofocus class="form-control w-auto" name="sickdays" placeholder="Days" type="number" min="0" max="365">
+    </div>
+    <button class="btn btn-primary btn-lg" type="submit">Next</button>
+</form>
+
+
+
+{% endblock %}

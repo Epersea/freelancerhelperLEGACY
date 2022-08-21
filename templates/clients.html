@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Client tool
+{% endblock %}
+
+{% block main %}
+<h1>How much are you really earning per hour?</h1>
+<h2>Are your clients really profitable?</h2>
+<br>
+<p>If you want to know if your hard work is really paying off,
+    you can use this calculator!</p>
+<p>For each project you have completed, please introduce the client's name, hours worked
+    and amount billed (converted to EUR) in the form below.</p>
+<p>After introducing the information, you will be sent to a summary with a registry of all your
+    clients. You will be able to see the rate you are earning per hour for each client, as well
+    as a stats summary.</p>
+<p>You can introduce as many projects as you want. We encourage you to come back here
+    everything you finish a new project to get updated information about your business.</p>
+<p><b>IMPORTANT:</b> This page is a beta version. If you want to keep your data secure, please use
+aliases instead of the real names of your clients.</p>
+<br>
+<form action="/clients" method="post">
+    <div class="mb-3">
+        <h5>Client's name:</h5>
+        <input autocomplete="off" autofocus class="form-control w-auto" name="clientname" placeholder="Name" type="text">
+    </div>
+    <div class="mb-3">
+        <h5>Hours worked:</h5>
+        <input autocomplete="off" autofocus class="form-control w-auto" name="hoursworked" placeholder="Hours" type="number" min="0">
+    </div>
+    <div class="mb-3">
+        <h5>Amount billed:</h5>
+        <input autocomplete="off" autofocus class="form-control w-auto" name="amountbilled" placeholder="€" type="number" min="0">
+    </div>
+    <button class="btn btn-primary btn-lg" type="submit">See results</button>
+</form>
+{% endblock %}

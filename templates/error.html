@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+<img src="/static/Oops.png" id="errorimage">
+<br>
+<div id="errortext">
+{{ error }}
+<br>
+Go back <a href="/">Home</a>.
+</div>
+
+{% endblock %}

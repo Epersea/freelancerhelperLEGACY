@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rate calculator 1: expenses
+{% endblock %}
+
+{% block main %}
+<h1>What are your expenses?</h1>
+<br>
+<p>Welcome to our rate calculator! For starters, we are going to start reviewing your expenses.</p>
+<p>As a freelancer, you are your own business. And every business has expenses that we need to take into account. For the sake of this calculation, we have divided expenses in 3 groups:</p>
+<ol>
+    <li>Long-term investments, like a computer or office furniture.</li>
+    <li>Annual expenses, such as software licenses or professional memberships.</li>
+    <li>Monthly expenses, like renting office space.</li>
+</ol>
+<p>Please note this website uses EUR as currency, so please convert your numbers accordingly.</p>
+<p>For long-term investments, please include the number of years you plan to use them. For instance, if your laptop costs 1,000 dollars and you plan to use it for 5 years, write “1000” in the amount field and “5” in the years field.</p>
+<p>For annual and monthly expenses, just write the estimated total.</p>
+<p>If any of the fields doesn't apply to your situation, just write “0”. Please, don't write negative numbers or the form just won't work!</p>
+<p>When you are finished, just click on “Next”.</p>
+<br>
+
+<form action="/rate" method="post">
+    <h2>Long-term investments</h2>
+    <br>
+    <div class="mb-3">
+        <h5>Computer and other hardware:</h5>
+        <input autocomplete="off" class="form-control w-auto" name="fixed1amount" placeholder="Amount" type="number" min="0">
+        <input autocomplete="off" class="form-control w-auto" name="fixed1years" placeholder="Years" type="number" min="0">
+    </div>
+    <div class="mb-3">
+        <h5>Office equipment:</h5>
+        <input autocomplete="off" class="form-control w-auto" name="fixed2amount" placeholder="Amount" type="number" min="0">
+        <input autocomplete="off" class="form-control w-auto" name="fixed2years" placeholder="Years" type="number" min="0">
+    </div>
+    <div class="mb-3">
+        <h5>Set-up marketing costs (for example, creating a website):</h5>
+        <input autocomplete="off" class="form-control w-auto" name="fixed3amount" placeholder="Amount" type="number" min="0">
+        <input autocomplete="off" class="form-control w-auto" name="fixed3years" placeholder="Years" type="number" min="0">
+    </div>
+    <div class="mb-3">
+        <h5>Other:</h5>
+        <input autocomplete="off" class="form-control w-auto" name="fixed4amount" placeholder="Amount" type="number" min="0">
+        <input autocomplete="off" class="form-control w-auto" name="fixed4years" placeholder="Years" type="number" min="0">
+    </div>
+    <br>
+    <h2>Annual expenses</h2>
+    <p>For example: training, software with annual licenses, office supplies, professional memberships, Internet domains, marketing and advertising, business trips…</p>
+    <div class="mb-3">
+        <h5>Total:</h5>
+        <input autocomplete="off" class="form-control w-auto" name="yearly" placeholder="Total" type="number" min="0">
+    </div>
+    <h2>Monthly expenses</h2>
+    <p>For example: rent, bills such as phone and Internet, software with monthly licenses…</p>
+    <div class="mb-3">
+        <h5>Total:</h5>
+        <input autocomplete="off" class="form-control w-auto" name="monthly" placeholder="Total" type="number" min="0">
+    </div>
+    <button class="btn btn-primary btn-lg" type="submit">Next</button>
+</form>
+
+{% endblock %}
+
+

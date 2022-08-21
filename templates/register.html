@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+<h5 style="text-align:center;">{{error}}</h5>
+<br>
+<p style="text-align:center"><b>IMPORTANT:</b> This page is a beta version. If you want to keep your data secure, please use
+    a password that you haven't used in other sites.</p>
+<br>
+<form action="/register" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" placeholder="Name" name="username" type="text">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" class="form-control mx-auto w-auto" placeholder="Password" name="password" type="password">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" class="form-control mx-auto w-auto" placeholder="Confirm password" name="confirmation" type="password">
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary btn-lg" type="submit">Register</button>
+    </div>
+</form>
+
+
+{% endblock %}
