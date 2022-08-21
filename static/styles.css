@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Nobile&family=Open+Sans&family=Ubuntu&display=swap');
+
+* {
+    font-family: "Nobile";
+    margin: 3px;
+}
+
+p {
+    font-size: 130%
+}
+
+table {
+    font-size: 110%
+}
+
+
+.navbar-dark {
+    font-size: 120%
+}
+
+.navbar-brand {
+    font-size: 120%;
+}
+
+#errorimage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+#errortext {
+    text-align: center;
+    font-size: xx-large;
+}
+
+.btn-primary {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: DeepSkyBlue;
+}
+
+.btn-danger {
+    background-color: OrangeRed;
+}
+
+.totals {
+    text-align: right;
+}
