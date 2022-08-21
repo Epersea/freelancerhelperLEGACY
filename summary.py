@@ -44,7 +44,7 @@ def check_clients_info(id):
         orderedclientsinfo = sorted(DBentry, key=itemgetter("rate"))
         return orderedclientsinfo
 
-# Orders client info by rate and returns it.
+# Calculates total hours worked, amount billed and average rate for the user.
 def get_total_clients(clientsinfo):
     totals = {}
     totals["hours"] = 0
