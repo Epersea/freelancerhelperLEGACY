@@ -1,5 +1,7 @@
 # Freelancer Helper
 
+IMPORTANT NOTE: this a legacy version. For version 2.0 with a different tech stack and better code practices, please check [this repo](https://github.com/Epersea/FreelancerHelper2.0)
+
 [Video demo](https://youtu.be/_JCpaxIT-DQ)
 
 ## What is Freelancer Helper?
